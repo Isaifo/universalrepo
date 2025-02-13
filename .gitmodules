@@ -1,0 +1,9 @@
+[submodule "api-farmlogistic"]
+	path = api-farmlogistic
+	url = https://github.com/JuTluszcz/api-farmlogistic.git
+[submodule "API-NODE2"]
+	path = API-NODE2
+	url = https://github.com/victor-lopes29/API-NODE2.git
+[submodule "REACT-TOPICOS"]
+	path = REACT-TOPICOS
+	url = https://github.com/victor-lopes29/REACT-TOPICOS.git

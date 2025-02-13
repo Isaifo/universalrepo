@@ -1,0 +1,28 @@
+version: '3.7'
+
+
+services:
+  # Serviço Farmlogistic (API)
+  api-farmlogistic:
+    image: openjdk:17-jdk-slim
+    container_name: apifarmlogistic
+    build:
+      context: ./api-farmlogistic  # Caminho da API Farmlogistic
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Expõe a porta 8080
+    environment:
+      DB_URL: "postgresql://logisticdb_owner:voCNtruOK43P@ep-crimson-snow-a5my0lyn-pooler.us-east-2.aws.neon.tech/logisticdb?sslmode=require"
+   
+  # Serviço API Node (Exemplo de conexão MongoDB)
+  api-node:
+    image: node:16-slim
+    container_name: api-node
+    build:
+      context: ./API-NODE2  # Caminho da API Node
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # Expõe a porta 3000
+    environment:
+      MONGODB_URL: "mongodb+srv://juliatluszcz:TLUgbYF6Beb7yZMl@aulatopicos.ep7it.mongodb.net/?retryWrites=true&w=majority&appName=AulaTopicos"
+  
