@@ -26,3 +26,12 @@ services:
     environment:
       MONGODB_URL: "mongodb+srv://juliatluszcz:TLUgbYF6Beb7yZMl@aulatopicos.ep7it.mongodb.net/?retryWrites=true&w=majority&appName=AulaTopicos"
   
+  # Serviço ReactTopicos IoT
+  api-reacttopicos-iot:
+    image: node:16-slim
+    container_name: apiiot
+    build:
+      context: ./reacttopicos  # Caminho da API ReactTopicos IoT
+      dockerfile: Dockerfile
+    ports:
+      - "6000:6000"  # Expõe a porta 6000
